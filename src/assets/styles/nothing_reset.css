@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600');
+html, body {
+  height: 100%;
+}
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  Avoid the IE 10-11 `min-height` bug.
+} */
