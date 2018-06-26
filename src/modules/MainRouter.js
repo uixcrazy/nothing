@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './App';
-import HomePage from '../pages/HomePage';
-import AboutUsPage from '../pages/AboutUsPage';
-import OriginalApp from '../components/original/App';
-import NotFound from '../components/NotFound';
+import asyncComponent from '../components/AsyncComponent';
+const HomePage = asyncComponent(() => import('../pages/HomePage'));
+const AboutUsPage = asyncComponent(() => import('../pages/AboutUsPage'));
+const OriginalApp = asyncComponent(() => import('../components/original/App'));
+const NotFound = asyncComponent(() => import('../pages/NotFound'));
 
 export default class MainRouter extends Component {
   constructor() {
