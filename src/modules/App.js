@@ -2,17 +2,15 @@ import PropTypes from 'prop-types';
 import React, { Component, Fragment } from 'react';
 import SiteHeader from '../components/layout/SiteHeader';
 import SiteFooter from '../components/layout/SiteFooter';
-import injectSheet, { ThemeProvider } from 'react-jss'
+import injectSheet, { ThemeProvider } from 'react-jss';
+import { VARS, BREAKPOINTS } from '../assets/styles/variables.style';
 import '../assets/styles/normalize.css';
 import '../assets/styles/nothing_reset.css';
 
-const theme = {
-  colorPrimary: '#121212',
-  backgroundColor: '#fefefe',
-  paddingLeftRight: '1rem',
-  primaryFont: '"Archivo", sans-serif',
-  secondaryFont: '"Montserrat", sans-serif'
-}
+const theme = Object.assign({},
+  VARS,
+  {breakpoints: BREAKPOINTS},
+  /*, and other function */)
 
 const styles = {
   app: {

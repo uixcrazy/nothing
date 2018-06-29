@@ -13,16 +13,18 @@ export default (theme) => ({
   },
   itemImage: {
     '-webkit-transition': 'all .5s ease-in-out',
-    'transition': 'all .5s ease-in-out',
+    transition: 'all .5s ease-in-out',
     maxWidth: '100%',
     verticalAlign: 'bottom',
   },
   caption: {
-    fontFamily: '"Lato", sans-serif',
+    fontFamily: theme.primaryFont,
     color: '#555',
     paddingTop: 8,
     fontSize: 18,
   },
+  // iphone: 375px x 667px
+  // plus: 414px x 736px
   '@media only screen and (min-width: 1024px)': {
     listPhotos: {
       columnCount: 4,
@@ -40,6 +42,9 @@ export default (theme) => ({
   },
 
   '@media only screen and (max-width: 539px)': {
+    item: {
+      display: 'block',
+    },
     itemImage: { // not good
       width: '100%',
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import SiteMain from '../components/layout/SiteMain';
-import ListPhotos from '../components/unsplash/ListPhotos';
+import ListPhotos from '../components/unsplash';
 
 const EyeStoryPage = () => (
   <SiteMain>

@@ -1,7 +1,8 @@
 export const API_BASE_URL = '';
 export const API_UNSPLASH = 'https://api.unsplash.com';
-
+// export const API_UNSPLASH = 'https://unsplash.com/napi';
 export const ENDPOINTS = { // uri
+  unsplashSearch: '/search',
   unsplashSearchPhotos: '/search/photos',
 };
 

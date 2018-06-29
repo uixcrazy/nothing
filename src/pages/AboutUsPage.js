@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListPhotos from '../components/unsplash/ListPhotos';
+import NoContent from '../components/NoContent';
 import SiteMain from '../components/layout/SiteMain';
 import PageTitle from '../components/layout/PageTitle';
 
@@ -8,7 +8,7 @@ export default class AboutUsPage extends Component {
     return (
       <SiteMain>
         <PageTitle>About Us</PageTitle>
-        <ListPhotos />
+        <NoContent />
       </SiteMain>
     );
   }

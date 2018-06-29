@@ -18,27 +18,6 @@ const ListTags = ({ classes, tags, handleClick }) => (
   </ul>
 );
 
-
-ListTags.defaultProps = {
-  tags: [
-    {
-      "title": "tree"
-    },
-    {
-      "title": "woodland"
-    },
-    {
-      "title": "forest"
-    },
-    {
-      "title": "hike"
-    },
-    {
-      "title": "mood"
-    }
-  ]
-};
-
 ListTags.propTypes = {
   classes: PropTypes.object,
   tags: PropTypes.arrayOf(PropTypes.object),

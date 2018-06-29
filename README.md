@@ -6,10 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Next Step
 
-- change API ```/search?query=autumn&xp=&per_page=20```
+- create (Tags:) lasted, related
 
--   ⇡ thêm một số data
+-   ⇡ xổ thành dropdown xuống
+- hiển thị 20 topic mới click gần nhất (the lasted history topic)
 
 - lazy load (React)
 
-- hiển thị 20 topic mới click gần nhất (the lasted history topic)
+- open detail dialog
+
+- add icon loading, love, download
