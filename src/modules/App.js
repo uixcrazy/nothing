@@ -10,7 +10,7 @@ const theme = {
   colorPrimary: '#121212',
   backgroundColor: '#fefefe',
   paddingLeftRight: '1rem',
-  primaryFont: '',
+  primaryFont: '"Archivo", sans-serif',
   secondaryFont: '"Montserrat", sans-serif'
 }
 

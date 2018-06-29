@@ -6,7 +6,7 @@ const styles = (theme) => ({
     fontFamily: theme.secondaryFont,
     color: theme.colorPrimary,
     fontSize: '2.25rem',
-    fontWeight: 500,
+    fontWeight: 600,
   }
 });
 

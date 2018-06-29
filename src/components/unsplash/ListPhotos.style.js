@@ -1,0 +1,48 @@
+export default (theme) => ({
+  listPhotos: {
+    columnGap: '1.5em',
+    '-webkit-column-gap': '1.5em', // Chrome, Safari, Opera
+    '-moz-column-gap': '1.5em',
+    '-webkit-transition': 'all .5s ease-in-out',
+    'transition': 'all .5s ease-in-out',
+    marginBottom: '2rem',
+  },
+  item: {
+    display: 'inline-block',
+    marginBottom: '1.5rem',
+  },
+  itemImage: {
+    '-webkit-transition': 'all .5s ease-in-out',
+    'transition': 'all .5s ease-in-out',
+    maxWidth: '100%',
+    verticalAlign: 'bottom',
+  },
+  caption: {
+    fontFamily: '"Lato", sans-serif',
+    color: '#555',
+    paddingTop: 8,
+    fontSize: 18,
+  },
+  '@media only screen and (min-width: 1024px)': {
+    listPhotos: {
+      columnCount: 4,
+    },
+  },
+  '@media only screen and (max-width: 1023px) and (min-width: 768px)': {
+    listPhotos: {
+      columnCount: 3,
+    },
+  },
+  '@media only screen and (max-width: 767px) and (min-width: 540px)': {
+    listPhotos: {
+      columnCount: 2,
+    },
+  },
+
+  '@media only screen and (max-width: 539px)': {
+    itemImage: { // not good
+      width: '100%',
+    }
+  },
+
+});
