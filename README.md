@@ -1,4 +1,4 @@
-🐾 	🐾 	🐾  NOTHING 🐾 	🐾 	🐾
+🐾 	🐾 	🐾  nothing 🐾 	🐾 	🐾
 
 ## Installation
 
@@ -26,22 +26,22 @@ Then open ```http://localhost:3000/``` to see your app.
 
 1. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-```
-  npx create-react-app nothing
-  cd nothing
-  npm start
-  npm run eject
-```
+    ```
+      npx create-react-app nothing
+      cd nothing
+      npm start
+      npm run eject
+    ```
 
 2. Code Splitting
 
-[Code Splitting in Create React App](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
-  or
-[Code Splitting with React and React Router](https://tylermcginnis.com/react-router-code-splitting/)
+    [Code Splitting in Create React App](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
+      or
+    [Code Splitting with React and React Router](https://tylermcginnis.com/react-router-code-splitting/)
 
 3. Create Mock API
 
-We use [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker).
+    We use [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker).
 
 
 ## Folder Structure (update later)
