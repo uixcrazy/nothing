@@ -52,10 +52,10 @@ export default (theme) => ({
   figcaption: {
     color: '#fff',
     position: 'absolute',
-    bottom: 0,
+    bottom: 10,
     padding: 10,
     fontWeight: 300,
-    fontSize: 22,
+    fontSize: 26,
     letterSpacing: '1px',
   },
   btnPrev: {

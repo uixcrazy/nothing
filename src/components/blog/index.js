@@ -11,6 +11,7 @@ import Chance from 'chance';
 
 import HammerSlider from '../../components/slider/HammerSlider';
 import { BANNER_SCHEMA } from '../../assets/json-schema-faker/blog-banner';
+import POST_LIST_SCHEMA from '../../assets/json-schema-faker/blog-post-list';
 
 class BlogApp extends Component {
   state = {
@@ -22,6 +23,10 @@ class BlogApp extends Component {
     jsf.extend('chance', () => new Chance());
     jsf.resolve(BANNER_SCHEMA).then((dataBanner) => {
       this.setState({dataBanner});
+    });
+
+    jsf.resolve(POST_LIST_SCHEMA).then((dataPost) => {
+      console.log(dataPost);
     });
   }
 
