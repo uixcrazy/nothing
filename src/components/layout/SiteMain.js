@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 
 const styles = (theme) => ({
   siteMain: {
+    extend: theme.layoutMaxWidth,
     flex: '1 0 auto',
     background: theme.backgroundColor,
 

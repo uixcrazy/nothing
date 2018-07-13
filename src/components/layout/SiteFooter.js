@@ -3,8 +3,8 @@ import injectSheet from 'react-jss';
 
 const styles = (theme) => ({
   siteFooter: {
+    width: '100%',
     flexShrink: 0,
-
     fontFamily: theme.secondaryFont,
     background: theme.backgroundColor,
     fontSize: '.625rem',
@@ -15,7 +15,7 @@ const styles = (theme) => ({
     borderTop: '1px solid #c9c9c9',
     padding: '1rem',
   }
-});
+})
 
 const SiteFooter = ({ classes }) => (
   <footer className={classes.siteFooter}>

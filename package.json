@@ -15,6 +15,7 @@
     "bfj": "5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
+    "chance": "^1.0.16",
     "css-loader": "0.28.11",
     "dotenv": "5.0.1",
     "dotenv-expand": "4.2.0",
@@ -25,10 +26,12 @@
     "eslint-plugin-import": "2.11.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.8.2",
+    "faker": "^4.1.0",
     "file-loader": "1.1.11",
     "fs-extra": "5.0.0",
     "graphql": "0.13.2",
     "graphql-tag": "2.9.2",
+    "hammerjs": "^2.0.8",
     "html-webpack-plugin": "3.2.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "22.4.3",
@@ -64,7 +67,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "generate-mock-data": "node buildScripts/generateMockData"
   },
   "browserslist": {
     "development": [

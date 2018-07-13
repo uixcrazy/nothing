@@ -1,4 +1,4 @@
-🐾 	🐾 	🐾  nothing 🐾 	🐾 	🐾
+# 🐾 	🐾 	🐾  nothing 🐾 	🐾 	🐾
 
 ## Installation
 
@@ -42,6 +42,11 @@ Then open ```http://localhost:3000/``` to see your app.
 3. Create Mock API
 
     We use [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker).
+
+    Three steps:
+      - Declare the schema: like file ```mockDataSchema.js```
+      - Generate random data: like command in package.json ```"generate-mock-data": "node buildScripts/generateMockData"```
+      - Serve random data: Create Provider to connect data be like real API
 
 
 ## Folder Structure (update later)

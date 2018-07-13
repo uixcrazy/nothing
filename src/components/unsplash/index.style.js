@@ -1,6 +1,5 @@
 export default (theme) => ({
   otherInfo: {
-    fontFamily: '"Archivo", sans-serif',
     marginBottom: 20,
     display: 'flex',
     color: '#777',

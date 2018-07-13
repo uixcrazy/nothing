@@ -12,21 +12,25 @@ export default (theme) => ({
     fontFamily: theme.secondaryFont,
     color: theme.colorPrimary,
     textTransform: 'uppercase',
-    fontSize: '0.625rem',
+    fontSize: '0.75rem',
     fontWeight: 600,
     textDecoration: 'none',
+    letterSpacing: '1px',
     '&:hover': {
       opacity: 0.6,
+    },
+    '&.current': {
+      color: '#777',
     },
     '&.current:after': {
       content: '""',
       display: 'block',
       position: 'absolute',
       left: '12.5%',
-      bottom: '.75em',
+      bottom: 0,
       height: '1px',
       width: '75%',
-      background: theme.colorPrimary,
+      background: '#777',
     }
   },
 });
