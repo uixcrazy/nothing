@@ -44,9 +44,47 @@ Then open ```http://localhost:3000/``` to see your app.
     We use [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker).
 
     Three steps:
-      - Declare the schema: like file ```mockDataSchema.js```
-      - Generate random data: like command in package.json ```"generate-mock-data": "node buildScripts/generateMockData"```
-      - Serve random data: Create Provider to connect data be like real API
+      3.1 Declare [JSON Schema](http://json-schema.org/)
+        [Miscellaneous Examples
+](http://json-schema.org/learn/miscellaneous-examples.html) vs [jsf](https://github.com/json-schema-faker/json-schema-faker#inferred-types)
+
+        ```
+        {
+          "$id": "https://example.com/person.schema.json",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": "Person",
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "description": "The person's first name."
+            },
+            "lastName": {
+              "type": "string",
+              "description": "The person's last name."
+            },
+            "age": {
+              "description": "Age in years which must be equal to or greater than zero.",
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+        ```
+
+      3.2 Generate random data: ```npm run mock-api```
+
+        Data
+
+        ```
+        {
+          "firstName": "John",
+          "lastName": "Doe",
+          "age": 21
+        }
+        ```
+
+      3.3 Serve random data: Create **Provider** to connect data be like real API
 
 
 ## Folder Structure (update later)

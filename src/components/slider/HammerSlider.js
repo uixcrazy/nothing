@@ -64,7 +64,12 @@ class HammerSlider extends Component {
   autoChangeNext() {
     if (this.autoSlide) clearInterval(this.autoSlide);
     this.autoSlide = setInterval(() => {
-      this.goToSlide(this.state.activeSlide + 1);
+      const { activeSlide, slideCount } = this.state;
+      if (activeSlide < slideCount - 1) {
+        this.goToSlide(activeSlide + 1);
+      } else {
+        this.goToSlide(0);
+      }
     }, 10000);
   }
 

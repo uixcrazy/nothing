@@ -1,4 +1,4 @@
-var schema = {
+export const schema = {
   "type": "object",
   "properties": {
     "users": {
@@ -33,4 +33,4 @@ var schema = {
   "required": ["users"]
 };
 
-module.exports = schema;
+// module.exports = schema;
