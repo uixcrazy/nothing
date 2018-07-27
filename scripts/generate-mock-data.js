@@ -12,32 +12,58 @@ import jsf from 'json-schema-faker';
 import faker from 'faker';
 import Chance from 'chance';
 
-// const fs = require('fs');
-// const path = require('path');
-// const chalk = require('chalk');
-// const jsf = require('json-schema-faker');
-// const faker = require('faker');
-// const Chance = require('chance');
+import POST_LIST_SCHEMA from '../src/assets/json-schema-faker/blog-post-list';
 
-// jsf.extend('faker', () => faker);
-// jsf.extend('chance', () => new Chance());
+jsf.extend('faker', () => faker);
+jsf.extend('chance', () => new Chance());
 
-// var mockDataSchema = require('./mockDataSchema');
-// var json = '';
-// jsf.resolve(mockDataSchema).then(function(result) {
-//   json = JSON.stringify(result, null, 2);
-// });
+/**
+ * Read all files at: ../src/assets/json-schema-faker
+ * *-*-*-*-* but not have prefix _
+ */
+const dirFaker = 'src/assets/json-schema-faker';
+const files = fs.readdirSync(dirFaker);
 
+if (files && files.length > 0) {
+  files.map(filename => {
 
-// fs.writeFile(path.join(__dirname, '..', "_mock-api/data/db.json"), json, function (err) {
-//   if (err) {
-//     return console.log(err);
-//   } else {
-//     console.log(chalk.yellow('ngoc NOGC') + chalk.cyan(json));
-//   }
-// });
+    const dirUrl = path.join(__dirname, '..', dirFaker, filename);
+    const jsonSchema = require(dirUrl).default;
+    console.log(chalk.yellow(JSON.stringify(jsonSchema, null, 2)));
 
 
+    // const dirname = path.join(dirFaker, filename);
+    // fs.readFile(dirname, (err, rawdata) => {
+    //   if (err) throw err;
+    //   if (rawdata) {
+    //     const data = rawdata.toString('utf8');
+    //     console.log(rawdata.toString('utf8'))
+    //     jsf.resolve(JSON.parse(data)).then(function(result) {
+    //       console.log(JSON.stringify(result, null, 2))
+    //     })
+    //   }
+    // });
+  });
+}
+
+    // var schema = fs.readFileSync(dirname, 'utf8');
+//     fs.readFile(dirname, (err, schema) => {
+//       if (err) {
+//         // throw err;
+//         console.log(chalk.red(schema));
+//       }
+//       if (schema) {
+//         // console.log(chalk.cyan(schema));
+//         jsf.resolve(schema).then(function(result) {
+// console.log(JSON.stringify(result, null, 2))
+
+//           // fs.writeFile(path.join(__dirname, '../__mocks__/mock-data', filename.slice(0, filename.length-3) + '.json'), JSON.stringify(result, null, 2), function (err) {
+//           //   if (err)
+//           //     throw err;
+//           // });
+//         });
+//       }
+//     });
 
 
 

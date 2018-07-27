@@ -35,6 +35,11 @@ class UnsplashApp extends Component {
     this.setState({
       isLoaded: false,
     });
+
+    // fetch('https://api.unsplash.com/search?query=autumn&xp=&per_page=10&page=5&client_id=9ad80b14098bcead9c7de952435e937cc3723ae61084ba8e729adb642daf0251').then(response => response.json()).then((jsonData) => {
+    //   console.log('using a client_id query parameter:', jsonData);
+    // });
+
     return getData({
       apiURL: API_UNSPLASH,
       // change API /search?query=autumn&xp=&per_page=20

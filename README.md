@@ -42,6 +42,7 @@ Then open ```http://localhost:3000/``` to see your app.
 3. Create Mock API
 
     We use [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker).
+    [Sample to build API](https://medium.com/@jonjam/creating-a-fake-rest-api-with-json-server-817320239cde)
 
     Three steps:
       3.1 Declare [JSON Schema](http://json-schema.org/)

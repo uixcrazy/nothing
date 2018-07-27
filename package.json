@@ -5,6 +5,10 @@
   "dependencies": {
     "@babel/cli": "^7.0.0-beta.54",
     "@babel/core": "^7.0.0-beta.54",
+    "@babel/node": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0-beta.54",
+    "@babel/preset-stage-2": "^7.0.0-beta.54",
     "@babel/runtime": "^7.0.0-beta.54",
     "autoprefixer": "8.5.0",
     "babel-core": "7.0.0-bridge.0",
@@ -69,8 +73,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "mock-api": "node scripts/generate-mock-data.js",
-    "abc": "babel lib/index.js"
+    "mock-api": "babel-node scripts/generate-mock-data.js",
+    "abc": "babel-node scripts/abc.js"
   },
   "browserslist": {
     "development": [
