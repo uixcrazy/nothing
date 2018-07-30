@@ -1,8 +1,11 @@
 import { RANDOM_IMAGE } from './_data-random';
 const POST_LIST_SCHEMA = {
+  "$id": "https://example.com/blog/post/all",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  title: "PostList",
   type: "array",
   minItems: 5,
-  maxItems: 5,
+  maxItems: 20,
   items: {
     type: "object",
     properties: {

@@ -10,7 +10,7 @@ import faker from 'faker';
 import Chance from 'chance';
 
 import HammerSlider from '../../components/slider/HammerSlider';
-import { BANNER_SCHEMA } from '../../assets/json-schema-faker/blog-banner';
+import BANNER_SCHEMA from '../../assets/json-schema-faker/blog-banner';
 import POST_LIST_SCHEMA from '../../assets/json-schema-faker/blog-post-list';
 
 class BlogApp extends Component {

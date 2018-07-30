@@ -42,11 +42,13 @@ Then open ```http://localhost:3000/``` to see your app.
 3. Create Mock API
 
     We use [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker).
-    [Sample to build API](https://medium.com/@jonjam/creating-a-fake-rest-api-with-json-server-817320239cde)
 
     Three steps:
-      3.1 Declare [JSON Schema](http://json-schema.org/)
-        [Miscellaneous Examples
+
+      3.1 Declare the schema
+
+      [JSON Schema](http://json-schema.org/)
+      [Miscellaneous Examples
 ](http://json-schema.org/learn/miscellaneous-examples.html) vs [jsf](https://github.com/json-schema-faker/json-schema-faker#inferred-types)
 
         ```
@@ -75,8 +77,6 @@ Then open ```http://localhost:3000/``` to see your app.
 
       3.2 Generate random data: ```npm run mock-api```
 
-        Data
-
         ```
         {
           "firstName": "John",
@@ -86,6 +86,11 @@ Then open ```http://localhost:3000/``` to see your app.
         ```
 
       3.3 Serve random data: Create **Provider** to connect data be like real API
+        [JSON server](https://github.com/typicode/json-server) creates a realistic API using the static JSON file we created
+
+    REFs:
+
+      [Sample](https://medium.freecodecamp.org/rapid-development-via-mock-apis-e559087be066)
 
 
 ## Folder Structure (update later)
