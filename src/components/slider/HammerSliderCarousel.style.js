@@ -28,7 +28,7 @@ export default (theme) => ({
   slider: {
     display: 'flex',
     // flexWrap: 'wrap',
-    transition: 'transform 800ms cubic-bezier(0.5, 0, 0.5, 1)',
+    // transition: 'transform 1200ms cubic-bezier(0.5, 0, 0.5, 1)',
     height: 'calc(100% - 30px)',
     overflow: 'hidden'
   },
@@ -63,6 +63,9 @@ export default (theme) => ({
     border: '1px solid #ccc',
     cursor: 'pointer',
     margin: 8,
+    '&:first-child, &:last-child': {
+      display: 'none'
+    }
   },
   btnBadgeActive: {
     composes: '$btnBadge',

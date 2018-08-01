@@ -9,7 +9,7 @@ export default (theme) => ({
     width: 900,
     height: 500,
     border: '2px solid #f5f5f5',
-    padding: 5,
+    padding: '5px 5px 0',
     '@media only screen and (max-width: 1280px)': {
       maxWidth: 700,
       width: '100%',

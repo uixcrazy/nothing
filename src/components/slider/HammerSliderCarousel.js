@@ -2,16 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 import Hammerjs from 'hammerjs';
-import styles from './HammerSlider.style';
+import styles from './HammerSliderCarousel.style';
 
-class HammerSlider extends Component {
+class HammerSliderCarousel extends Component {
   static propTypes = {
     classes: PropTypes.object,
     data: PropTypes.arrayOf(PropTypes.element),
+    infinite: PropTypes.bool,
+    duration: PropTypes.number,
   }
+  static defaultProps = {
+    infinite: true,
+    duration: 1200,
+  }
+
   state = {
     data: this.props.data,
-    activeSlide: 0,
+    activeSlide: 1,
     slideCount: this.props.data ? this.props.data.length : null,
   };
 
@@ -72,6 +79,24 @@ class HammerSlider extends Component {
     if (this.autoSlide) clearInterval(this.autoSlide);
   }
 
+  changePrev(activeSlide, realSlideCount) {
+    const { duration } = this.state;
+    this.goToSlide(activeSlide - 1);
+    if (activeSlide === 1) {
+      // setTimeout(() => {
+      //   this.goToSlide(realSlideCount);
+      //   this.autoChangeNext();
+      // }, duration);
+    } else {
+      this.autoChangeNext();
+    }
+    console.log(activeSlide, realSlideCount);
+  }
+
+  changeNext(activeSlide, realSlideCount) {
+    this.goToSlide(activeSlide + 1);
+  }
+
   autoChangeNext() {
     this.stopAutoChange();
     this.autoSlide = setInterval(() => {
@@ -98,13 +123,14 @@ class HammerSlider extends Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, duration } = this.props;
     const {
       data,
       activeSlide,
       slideCount,
     } = this.state;
-    const percentage = -(100 / slideCount) * activeSlide;
+    const realSlideCount = slideCount + 2;
+    const percentage = -(100 / realSlideCount) * activeSlide;
     const disabledLeft = activeSlide === 0;
     const disabledRight = activeSlide === (slideCount - 1);
     return data && data.length > 0 ?
@@ -121,11 +147,20 @@ class HammerSlider extends Component {
             this.autoChangeNext();
           }}>
           <div
+            ref={(DOM) => {
+              this.slider = DOM;
+            }}
             className={classes.slider}
             style={{
-              width: `${slideCount * 100}%`,
+              width: `${realSlideCount * 100}%`,
               transform: `translateX(${percentage}%)`,
+              transition: `transform ${duration}ms cubic-bezier(0.5, 0, 0.5, 1)`,
             }}>
+            {
+              <div className={classes.slide}>
+                {data[data.length-1]}
+              </div>
+            }
             {
               data.map((item, index) => (
                 <div className={classes.slide} key={index}>
@@ -133,13 +168,18 @@ class HammerSlider extends Component {
                 </div>
               ))
             }
+            {
+              <div className={classes.slide}>
+                {data[0]}
+              </div>
+            }
           </div>
           <button
             disabled={disabledLeft}
             className={classes.btnPrev}
             onClick={() => {
-              this.goToSlide(activeSlide - 1);
-              this.autoChangeNext();
+              // this.goToSlide(activeSlide - 1);
+              this.changePrev(activeSlide, realSlideCount);
             }}>
             ⇠
           </button>
@@ -147,14 +187,14 @@ class HammerSlider extends Component {
             disabled={disabledRight}
             className={classes.btnNext}
             onClick={() => {
-              this.goToSlide(activeSlide + 1);
-              this.autoChangeNext();
+              // this.goToSlide(activeSlide + 1);
+              this.changeNext(activeSlide, realSlideCount);
             }}>
             ⇢
           </button>
           <div className={classes.pagination}>
             {
-              [...Array(slideCount)].map((item, index) => (
+              [...Array(realSlideCount)].map((item, index) => (
                 <button
                   key={index}
                   disabled={activeSlide === index}
@@ -177,4 +217,4 @@ class HammerSlider extends Component {
   }
 }
 
-export default injectSheet(styles)(HammerSlider);
+export default injectSheet(styles)(HammerSliderCarousel);

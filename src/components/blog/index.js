@@ -9,7 +9,8 @@ import jsf from 'json-schema-faker';
 import faker from 'faker';
 import Chance from 'chance';
 
-import HammerSlider from '../../components/slider/HammerSlider';
+import SlideCt from './SlideCt';
+import HammerSliderCarousel from '../../components/slider/HammerSliderCarousel';
 import BANNER_SCHEMA from '../../assets/json-schema-faker/blog-banner';
 import POST_LIST_SCHEMA from '../../assets/json-schema-faker/blog-post-list';
 
@@ -25,17 +26,24 @@ class BlogApp extends Component {
       this.setState({dataBanner});
     });
 
-    jsf.resolve(POST_LIST_SCHEMA).then((dataPost) => {
-      console.log(dataPost);
-    });
+    // jsf.resolve(POST_LIST_SCHEMA).then((dataPost) => {
+    //   console.log(dataPost);
+    // });
+  }
+
+  renderBanner(data) {
+    if (data) {
+      return data.map((item, index) => <SlideCt item={item} key={index}/>)
+    }
   }
 
   render() {
     const { classes } = this.props;
+    const bannerEl = this.renderBanner(this.state.dataBanner);
     return (
       <div className={classes.blogApp}>
         <div className={classes.slider}>
-          <HammerSlider data={this.state.dataBanner} />
+          <HammerSliderCarousel data={bannerEl} />
         </div>
       </div>
     )
