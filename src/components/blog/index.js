@@ -33,7 +33,7 @@ class BlogApp extends Component {
 
   renderBanner(data) {
     if (data) {
-      return data.map((item, index) => <SlideCt item={item} key={index}/>)
+      return data.map((item, index) => <SlideCt item={item} key={index} keya={index}/>)
     }
   }
 

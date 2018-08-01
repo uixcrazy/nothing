@@ -13,18 +13,18 @@ class HammerSliderCarousel extends Component {
   }
   static defaultProps = {
     infinite: true,
-    duration: 1200,
+    duration: 800,
   }
 
   state = {
     data: this.props.data,
     activeSlide: 1,
     slideCount: this.props.data ? this.props.data.length : null,
+    realSlideCount: this.props.data ? this.props.data.length + 2 : null,
+    transition: `transform ${this.props.duration}ms cubic-bezier(0.5, 0, 0.5, 1)`
   };
 
-  // componentDidMount() {
-  //   this.createSlider();
-  // }
+  // componentDidMount() { this.createSlider(); }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     // It can return an object to update state,
@@ -33,6 +33,8 @@ class HammerSliderCarousel extends Component {
       return {
         data: nextProps.data,
         slideCount: nextProps.data ? nextProps.data.length : null,
+        realSlideCount: nextProps.data ? nextProps.data.length + 2 : null,
+        transition: `transform ${nextProps.duration}ms cubic-bezier(0.5, 0, 0.5, 1)`
       };
     }
     return null;
@@ -50,9 +52,7 @@ class HammerSliderCarousel extends Component {
     this.stopAutoChange();
   }
 
-  // handleChange = e => {
-  //   this.setState({ text: e.target.value })
-  // }
+  // handleChange = e => { this.setState({ text: e.target.value }) }
 
   createSlider() {
     if (this.swiper) {
@@ -79,22 +79,32 @@ class HammerSliderCarousel extends Component {
     if (this.autoSlide) clearInterval(this.autoSlide);
   }
 
-  changePrev(activeSlide, realSlideCount) {
-    const { duration } = this.state;
+  changePrev(activeSlide) {
+    const { duration } = this.props;
+    const { realSlideCount } = this.state;
     this.goToSlide(activeSlide - 1);
     if (activeSlide === 1) {
-      // setTimeout(() => {
-      //   this.goToSlide(realSlideCount);
-      //   this.autoChangeNext();
-      // }, duration);
+      setTimeout(() => {
+        this.goToSlide(realSlideCount-2, 'none');
+        this.autoChangeNext();
+      }, duration + 100);
     } else {
       this.autoChangeNext();
     }
-    console.log(activeSlide, realSlideCount);
   }
 
-  changeNext(activeSlide, realSlideCount) {
+  changeNext(activeSlide) {
+    const { duration } = this.props;
+    const { realSlideCount } = this.state;
     this.goToSlide(activeSlide + 1);
+    if (activeSlide === (realSlideCount - 2)) {
+      setTimeout(() => {
+        this.goToSlide(1, 'none');
+        this.autoChangeNext();
+      }, duration + 100);
+    } else {
+      this.autoChangeNext();
+    }
   }
 
   autoChangeNext() {
@@ -109,30 +119,32 @@ class HammerSliderCarousel extends Component {
     }, 10000);
   }
 
-  goToSlide(number) {
-    const { slideCount } = this.state;
+  goToSlide(number,
+    transition = `transform ${this.props.duration}ms cubic-bezier(0.5, 0, 0.5, 1)`) {
+    const { realSlideCount } = this.state;
     let activeSlide = null;
     if (number < 0) {
       activeSlide = 0;
-    } else if (number > slideCount - 1) {
-      activeSlide = slideCount - 1;
+    } else if (number > realSlideCount - 1) {
+      activeSlide = realSlideCount - 1;
     } else {
       activeSlide = number;
     }
-    this.setState({ activeSlide });
+    this.setState({ activeSlide, transition });
   }
 
   render() {
-    const { classes, duration } = this.props;
+    const { classes } = this.props;
     const {
       data,
       activeSlide,
       slideCount,
+      realSlideCount,
+      transition,
     } = this.state;
-    const realSlideCount = slideCount + 2;
     const percentage = -(100 / realSlideCount) * activeSlide;
     const disabledLeft = activeSlide === 0;
-    const disabledRight = activeSlide === (slideCount - 1);
+    const disabledRight = activeSlide === (slideCount - 1 + 2);
     return data && data.length > 0 ?
       (
         <div
@@ -147,14 +159,11 @@ class HammerSliderCarousel extends Component {
             this.autoChangeNext();
           }}>
           <div
-            ref={(DOM) => {
-              this.slider = DOM;
-            }}
             className={classes.slider}
             style={{
               width: `${realSlideCount * 100}%`,
               transform: `translateX(${percentage}%)`,
-              transition: `transform ${duration}ms cubic-bezier(0.5, 0, 0.5, 1)`,
+              transition,
             }}>
             {
               <div className={classes.slide}>
@@ -179,7 +188,7 @@ class HammerSliderCarousel extends Component {
             className={classes.btnPrev}
             onClick={() => {
               // this.goToSlide(activeSlide - 1);
-              this.changePrev(activeSlide, realSlideCount);
+              this.changePrev(activeSlide);
             }}>
             ⇠
           </button>
@@ -188,7 +197,7 @@ class HammerSliderCarousel extends Component {
             className={classes.btnNext}
             onClick={() => {
               // this.goToSlide(activeSlide + 1);
-              this.changeNext(activeSlide, realSlideCount);
+              this.changeNext(activeSlide);
             }}>
             ⇢
           </button>
