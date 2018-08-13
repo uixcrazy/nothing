@@ -8,7 +8,7 @@ export const VARS = {
 };
 
 export const BREAKPOINTS = {
-  mobile: ''
+  mobile: '768'
 }
 
 export const LAYOUT_MAXWIDTH = {

@@ -3,7 +3,6 @@ import React, { Component, Fragment } from 'react';
 import SiteHeader from '../components/layout/SiteHeader';
 import SiteFooter from '../components/layout/SiteFooter';
 import injectSheet, { ThemeProvider } from 'react-jss';
-import { isMobile } from '../core/mobile-detect';
 import { VARS, BREAKPOINTS, LAYOUT_MAXWIDTH } from '../assets/styles/variables.style';
 import '../assets/styles/normalize.css';
 import '../assets/styles/nothing_reset.css';
@@ -22,12 +21,16 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    // height: '100vh',
   }
 };
 
 class App extends Component {
+  // state = {
+  //   isModalOpen: false,
+  // };
+
   render() {
-    console.log(isMobile);
     const { classes } = this.props;
     return (
       <ThemeProvider theme={theme}>
@@ -35,6 +38,10 @@ class App extends Component {
           <SiteHeader />
           {this.props.children}
           <SiteFooter />
+          {/* StarterNavigation */}
+          {/* modal */}
+          {/* Flag / Notification */}
+          {/* footer */}
         </div>
       </ThemeProvider>
     );

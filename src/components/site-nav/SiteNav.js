@@ -3,30 +3,14 @@ import { NavLink } from 'react-router-dom';
 import injectSheet from 'react-jss';
 import styles from './SiteNav.style';
 
+import { NAV_LIST } from './constants';
+
 const SiteNav = ({ classes }) => {
-  const navList = [
-    // selected
-    // {
-    //   to: '/',
-    //   name: 'Home',
-    // },
-    {
-      to: '/eye-story',
-      name: 'Eye Story',
-    },
-    {
-      to: '/book-reviews',
-      name: 'Book Reviews',
-    },
-    {
-      to: '/about-us',
-      name: 'About Us',
-    },
-  ]
+
   return (
     <nav className={classes.siteNav}>
       {
-        navList.map((item, index) => (
+        NAV_LIST.map((item, index) => (
           <NavLink
             key={index}
             to={item.to}

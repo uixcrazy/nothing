@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import SiteNav from './SiteNav';
+import SiteNav from '../site-nav/SiteNav';
 import injectSheet from 'react-jss';
 import styles from './SiteHeader.style';
 

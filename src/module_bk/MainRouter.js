@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './App';
+// import asyncComponent from '../components/AsyncComponent';
 import asyncComponent from '../components/DynamicImport';
 const HomePage = asyncComponent(() => import('../pages/HomePage'));
 const AboutUsPage = asyncComponent(() => import('../pages/AboutUsPage'));
@@ -26,6 +27,13 @@ export default class MainRouter extends Component {
     };
   }
 
+  // appWithPersistentNav = () => (props) => (
+    // <App
+    //   onNavResize={this.onNavResize}
+    //   {...props}
+    // />
+  // )
+
   onNavResize = (navOpenState) => {
     this.setState({
       navOpenState,
@@ -38,6 +46,7 @@ export default class MainRouter extends Component {
         <App>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            {/* <Route path="/pages/:id" component={Page} /> */}
             <Route exact path="/eye-story" component={EyeStoryPage} />
             <Route exact path="/book-reviews" component={OriginalApp} />
             <Route exact path="/about-us" component={AboutUsPage} />
