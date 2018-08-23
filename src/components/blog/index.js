@@ -12,11 +12,13 @@ import Chance from 'chance';
 import SlideCt from './SlideCt';
 import HammerSliderCarousel from '../../components/slider/HammerSliderCarousel';
 import BANNER_SCHEMA from '../../assets/json-schema-faker/blog-banner';
+import ITEM_SCHEMA from '../../assets/json-schema-faker/re-project';
 import POST_LIST_SCHEMA from '../../assets/json-schema-faker/blog-post-list';
 
 class BlogApp extends Component {
   state = {
     dataBanner: null,
+    items: null,
   }
 
   componentDidMount() {
@@ -26,9 +28,9 @@ class BlogApp extends Component {
       this.setState({dataBanner});
     });
 
-    // jsf.resolve(POST_LIST_SCHEMA).then((dataPost) => {
-    //   console.log(dataPost);
-    // });
+    jsf.resolve(ITEM_SCHEMA).then((items) => {
+      console.log(items);
+    });
   }
 
   renderBanner(data) {

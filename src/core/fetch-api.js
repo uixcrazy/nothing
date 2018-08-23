@@ -20,11 +20,11 @@ const getData = ({
     method: 'GET',
   }).then(res => {
     const jsonData = res.json();
-    if (jsonData.errors) {
-      console.log('%c---------', 'background: #222; color: #bada55');
-      console.log(`%c${jsonData.errors.join('  ↚ ↛ ')}`, 'background: #222; color: #bada55');
-      console.log('%c---------', 'background: #222; color: #bada55');
-    }
+    // if (jsonData.errors) {
+    //   console.log('%c---------', 'background: #222; color: #bada55');
+    //   console.log(`%c${jsonData.errors.join('  ↚ ↛ ')}`, 'background: #222; color: #bada55');
+    //   console.log('%c---------', 'background: #222; color: #bada55');
+    // }
     return jsonData;
   }).catch(error => console.error('Error:', error))
 }

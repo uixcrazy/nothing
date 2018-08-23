@@ -27,7 +27,7 @@ const styles = {
 
 class App extends Component {
   render() {
-    console.log(isMobile);
+    // console.log(isMobile);
     const { classes } = this.props;
     return (
       <ThemeProvider theme={theme}>
