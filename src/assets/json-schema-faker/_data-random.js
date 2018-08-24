@@ -1,4 +1,10 @@
 export const RANDOM_IMAGE = [
+  "http://namlongvn.com/media/ckmedia/userfiles/images/phoi-canh-ehome5.jpg",
+  "http://sannamlong.com:7787/mediaroot/media/userfiles/useruploads/435/image/can%20ho/flora%20kikyo%20quan%209/phoi%20canh%20flora%20kikyo%20dep.jpg",
+  "http://sannamlong.com:7787/mediaroot/media/userfiles/useruploads/435/image/can%20ho/flora%20kikyo%20quan%209/cong-vien-kikyo%20(4).jpg",
+  "http://sannamlong.com:7787/mediaroot/media/userfiles/useruploads/435/image/can%20ho/flora%20kikyo%20quan%209/phong%20GYM%20mau.jpg",
+  "http://sannamlong.com:7787/mediaroot/media/userfiles/useruploads/435/image/can%20ho/akari%20city/phoi-canh-khu-do-thi-akari-city.jpg",
+  "http://sannamlong.com:7787/mediaroot/media/userfiles/useruploads/435/image/can%20ho/akari%20city/tong-the-akari-city.jpg",
   "https://images.unsplash.com/photo-1531296917375-a4d4d3fe7931?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=16cabbfdc1383c70c7354cf48155d29c&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1531167560822-2c467289ab61?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=170f239864ad8b4e7e14529c7622197a&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1531382589815-ed743983fbf5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7544e4f07be51ee9709eef540e2c8593&auto=format&fit=crop&w=500&q=60",
