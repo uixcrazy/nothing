@@ -64,30 +64,30 @@ export const ITEMS = {
       minimum: 1,
       maximum: 2,
     },
-    location_latitude: {
+    locationLatitude: {
       type: "string",
       chance: {
         latitude: {fixed: 6},
       },
     },
-    location_longitude: {
+    locationLongitude: {
       type: "string",
       chance: {
         longitude: {fixed: 6},
       },
     },
-    investment_vnd_b: {
+    investmentVndB: {
       type: "integer",
       minimum: 1000,
       maximum: 1000000,
     },
-    date_construct: {
+    dateConstruct: {
       type: "string",
       chance: {
         date: { year: 2018 },
       },
     },
-    date_deliver: {
+    dateDeliver: {
       type: "string",
       chance: {
         date: { year: 2020 },
@@ -99,12 +99,12 @@ export const ITEMS = {
       maxItems: 3,
       items: IMAGE,
     },
-    price_range_min:  {
+    priceRangeMin:  {
       type: "integer",
       minimum: 1,
       maximum: 6,
     },
-    price_range_max:  {
+    priceRangeMax:  {
       type: "integer",
       minimum: 1,
       maximum: 10,
@@ -132,14 +132,14 @@ export const ITEMS = {
     "investors",
     "constructors",
     "guarantor",
-    "location_latitude",
-    "location_longitude",
-    "investment_vnd_b",
-    "date_construct",
-    "date_deliver",
+    "locationLatitude",
+    "locationLongitude",
+    "investmentVndB",
+    "dateConstruct",
+    "dateDeliver",
     "images",
-    "price_range_min",
-    "price_range_max",
+    "priceRangeMin",
+    "priceRangeMax",
     "priority",
     "createdAt",
     "updatedAt",
