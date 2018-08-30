@@ -52,7 +52,7 @@ class UnsplashApp extends Component {
         page: 5,
       }})
       .then((jsonData) => {
-        console.log(jsonData);
+        // console.log(jsonData);
         this.setState({
           isLoaded: true,
           ...(jsonData.errors
