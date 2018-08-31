@@ -1,4 +1,5 @@
-import { ITEMS, ITEMS_REPROJECT } from './re-project-item';
+import { ITEMS } from './re-project-item';
+
 const REPROJECT = {
   "$id": "https://example.com/re-project.json",
   "$schema": "http://json-schema.org/draft-07/schema#",

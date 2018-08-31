@@ -1,3 +1,7 @@
+/**
+ * definitions
+ */
+
 import { RANDOM_IMAGE } from './_data-random';
 
 export const IMAGE = {

@@ -1,3 +1,7 @@
+/**
+ * definitions
+ */
+
 import { IMAGE } from './re-project-item-image';
 export const ITEMS = {
   type: "object",
@@ -147,6 +151,7 @@ export const ITEMS = {
   ]
 };
 
+// to test
 const ITEMS_REPROJECT = {
   "$id": "https://example.com/re-project-item.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
